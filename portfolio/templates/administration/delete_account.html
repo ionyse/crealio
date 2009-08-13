@@ -1,0 +1,18 @@
+{% extends "base_admin.html" %}
+
+{% block title %}Suppression de son compte - Administration - {{ portfolio_name }}  - {{SITE_NAME}}{% endblock %}
+
+{% block content %}
+<h2>Suppression du compte {{ portfolio_name }}</h2>
+<p class="red">Attention, suite à la suppression toutes les informations vous concernant seront perdues (Fichiers, images, données).</p>
+<form action="." method="POST">
+  <p class="red">Êtes-vous sur de vouloir supprimer définitivement votre compte ?</p>
+
+  <table>
+    <tr>
+      <td><input type="submit" name="oui" value="Supprimer" /></td>
+      <td><input type="button" value="Annuler" onclick="history.go(-1);"/></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

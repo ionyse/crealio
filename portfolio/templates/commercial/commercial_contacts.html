@@ -1,0 +1,79 @@
+{% extends "index.html" %}
+{% block content %}
+
+
+<div id="content-wrap">  
+
+	<div id="leftbar">
+
+		<div style="margin: 10px;">
+			<script type="text/javascript"><!--
+			google_ad_client = "pub-0150814735647856";
+			/* Créalio _ 160x600, 01/02/09 */
+			google_ad_slot = "0178416785";
+			google_ad_width = 160;
+			google_ad_height = 600;
+			//-->
+			</script>
+			<script type="text/javascript"
+			src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+			</script>
+
+		</div>
+	</div>		
+
+	<div id="mainLargeLeft"> 
+
+
+		<h2>Contactez-nous</h2>
+
+
+		<div id="contact_message" class="float-left">
+		<p>
+		Pour toute question, demande d'informations ou toute autre raison,
+		n'hésitez pas à nous contacter en remplissant le formulaire de
+		contact.
+		</p>
+		<p>
+		Vous pouvez aussi me joindre par E-Mail
+		à <a href="mailto:contact@crealio.fr">contact@crealio.fr</a>.
+
+		</p>
+
+
+		</div>
+
+		<div id="contact_form">
+		{% if status %}<p style="color: {% if error %}red{% else %}green{% endif %};">{{status}}</p>{% endif %}
+		<form action="." method="post">
+		    <p>
+		        <label for="contact_name">Nom : </label>
+		        <input class="textfield" size="25" name="pseudo" id="contact_name" type="text"{% if user %}value="{{user.first_name}} {{user.last_name}}"{% endif %} />
+		    </p>
+		    <p>
+
+		        <label for="contact_email">E-Mail: <span class="required">*</span></label>
+		        <input class="textfield" size="25" name="mail" id="contact_email" type="text"{% if user %}value="{{user.email}}"{% endif %} />
+		    </p>
+		    <p>
+		        <label for="contact_objet">Objet :</label>
+		        <input class="textfield" size="25" name="objet" id="contact_objet" type="text" />
+		    </p>
+
+		    <p>
+		        <label for="contact_msg">Message : <span class="required">*</span></label>
+		        <textarea cols="45" rows="5" name="message" id="contact_msg"></textarea>
+		    </p>
+		    <p>
+		        <label>
+			    <input class="submit" name="send_email" id="send_email" value="Envoyer l'E-Mail" type="submit" />
+		        </label>
+		    </p>
+		</form>
+		</div>
+	</div> 
+
+</div>
+
+
+{% endblock %}

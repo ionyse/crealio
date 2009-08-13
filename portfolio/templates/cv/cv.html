@@ -1,0 +1,45 @@
+{% extends "base_portfolio.html" %}
+{% load age %}
+{% load thumbnail %}
+
+{% block title %}{{page.title}} - {{ portfolio_name }}  - {{SITE_NAME}}{% endblock %}
+
+{% block content %}
+
+<table id="cv">
+  {% for field in fields %}
+  <tr>
+    <th colspan="2"><h2>{{field.title}}</h2><hr/></th>
+  </tr>
+  {% for item in field.items %}
+  <tr>
+    <td class="cvTitre"><p>{{ item.title }}</p></td>
+    <td>{{item.desc|safe}}</td>
+  </tr>
+  {% endfor %}
+  {% endfor %}
+</table>
+
+
+
+<!-- IMPORTANT, FENETRE POP UP APERCU A CONSERVER ! -->
+<div id="popUpProjet">
+ <div class="corpPopUp">
+ <div style="float: right; padding-right: 30px;"><a href="" onclick="closePopUpProject(); return false;">|X| Fermer</a></div>
+ 
+<div id="contenuTitrePopUp">Nom du Projet : Crealio.fr</div>
+
+
+    <div id="contenuCorpPopUp"> <!-- Attention CSS important sur cet id -->
+        
+    </div>
+ </div>
+</div>
+
+
+<!-- Ajout du script de l'aperçu -->
+<script type="text/javascript" src="{{MEDIA_URL}}/jscripts/apercu/popUp.js"></script>
+
+<!-- Pub Google -->
+
+{% endblock %}

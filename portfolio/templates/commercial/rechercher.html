@@ -1,0 +1,85 @@
+{% extends "index.html" %}
+{% load thumbnail %}
+{% block content %}
+
+<div id="mainFull">
+
+	<div style="width: 100%;">
+
+
+		<div class="ligneRecherche">
+
+			<div class="caseSimpleRechercheInscription">
+				<a href="/inscription/formulaire/" ><p class="texteGrosBouton"><em>Inscription gratuite<br/></em></p>
+					<h4 class="sousTexteGrosBouton">Cliquez ici !</h4>
+				</a>
+			</div>
+		</div>
+
+		<h2>Quelques exemples de CV</h2>
+
+
+		<p>Voici <strong>quelques exemple de ce dont Créalio est capable</strong>. Vous trouverez ci dessous une sélection de CV que notre équipe juge représentatif des capacités de Créalio. Cette liste est mise à jour régulièrement, alors qui sait, peut être y trouverez vous un jour le vôtre.</p>
+
+		<div id="listeRecherche">
+			{% for site in top6 %}
+			<div class="caseCvAnnuaire">
+					<table>
+						<tr>
+							<td class="annuaireImage">
+							  <a href="http://{{site.domain}}/accueil/">				
+
+								{% if site.user.get_profile.identite %} 
+								<img src="{% thumbnail site.user.get_profile.identite 96x96 %}" alt="{{ site.user.first_name|capfirst }} {{ site.user.last_name|upper }}" title="{{ site.user.first_name }} {{ site.user.last_name }}" />
+								{% else %}
+								<img src=" {{ MEDIA_URL }}/{{ image }}" alt="{{ site.user.first_name|capfirst }} {{ site.user.last_name|upper }}" title="{{ site.user.first_name }} {{ site.user.last_name }}" style="width: 96px; height: 96px;" />
+								{% endif %}
+							  </a>
+							</td>
+							<td class="annuaireDetail">
+								<p>
+								  <a href="http://{{site.domain}}/accueil/">				
+									<span class="titre">{{ site.user.first_name|capfirst }} {{ site.user.last_name|upper }}</span><br>
+									<strong>{{ site.user.get_profile.metier }}</strong><br/>
+									<em>{{ site.user.get_profile.city }} / {{ site.user.get_profile.country }}</em><br/>
+									<span class="small">Mis à jour : {{ site.user.last_login|date:"d/m/Y" }}</span>
+								  </a>
+								</p>
+							</td>
+						</tr>
+					</table>
+			</div>
+			{% endfor %}
+			<div style="clear: both;"></div>
+		</div>
+
+
+			<div class="annuaireZoneTexte">
+				<p style="text-align: left"><strong>Les 5 derniers WebCV mis à jours</strong> : |
+					{% for site in last5 %}
+					<a href="http://{{site.domain}}/accueil/">{{ site.user.first_name }} {{ site.user.last_name }}</a> |  
+					{% endfor %}
+				</p>
+			</div>
+
+			<div class="annuaireForm">
+				<h2>Faites donc une recherche sur Créalio !</h2>
+
+				<p>Cherchez donc un Nom, une ville, un Metier ou une école que vous avez fréquenté. L'outil de recherche mis en place permet de trouver l'information qu'il vous faut dans l'ensemble des CV de Créalio.</p>
+
+				<form action="{{ COMMERCIAL_URL }}/rechercher/" id="cse-search-box">
+				  <div>
+				    <input type="hidden" name="cx" value="partner-pub-0150814735647856:tx0i7qslrio" />
+				    <input type="hidden" name="cof" value="FORID:9" />
+				    <input type="hidden" name="ie" value="ISO-8859-1" />
+				    <input type="text" name="q" size="35" />
+				    <input type="submit" name="sa" value="Rechercher" />
+				  </div>
+				</form>
+				<script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=cse-search-box&amp;lang=fr"></script>		
+			</div>
+			<div style="clear: both;"></div>
+
+		</div>
+	</div>
+	{% endblock %}

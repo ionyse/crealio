@@ -1,0 +1,9 @@
+Algorithme
+----------
+
+1. On affiche l'ItemForm que si l'on connait l'id de l'instance du FieldForm père.
+2. Une fois que l'on a rempli un ItemForm, on ajoute directement un autre et on l'enregistre.
+3. Attention à la validation des formulaires en live.
+
+AJAX = XML streams
+

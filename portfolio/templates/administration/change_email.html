@@ -1,0 +1,21 @@
+{% extends "base_admin.html" %}
+
+{% block title %}Modification du mot de passe - Administration - {{ portfolio_name }}  - {{SITE_NAME}}{% endblock %}
+
+{% block jscript %}
+<script type="text/javascript" src="http://{{ DOMAIN_NAME }}/medias/jscripts/tiny_mce/tiny_mce.js"></script>
+<script type="text/javascript" src="http://{{ DOMAIN_NAME }}/medias/jscripts/tiny_conf.js"></script>
+
+{% endblock %}
+
+{% block content %}
+<h2>Modification du mot de passe</h2>
+<p style="color: red;">Un mail de confirmation vous sera envoyé et votre compte sera désactivé en attendant la validation de votre email.</p>
+<form action="." method="POST">
+{{ form.as_p }}
+<p style="text-align: center;width: 100%">
+  <input type="submit" value="Envoyer" />
+  <input type="button" value="Annuler" onclick="history.go(-1);"/>
+</p>
+</form>
+{% endblock %}

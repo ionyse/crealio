@@ -1,0 +1,31 @@
+{% extends "base_admin.html" %}
+
+{% block title %}Ajout d'un projet - Portfolio - Administration - {{ portfolio_name }}  - {{SITE_NAME}}{% endblock %}
+
+{% block css %}
+<link  rel="stylesheet"  href="{{ ADMIN_MEDIA }}css/widgets.css" type="text/css" /> 
+<link  rel="stylesheet"  href="{{ MEDIA_URL }}skins/crealio/calendar.css" type="text/css" />
+{% endblock %}
+
+{% block jscript %}
+<script type="text/javascript" src="http://{{ DOMAIN_NAME }}/medias/jscripts/tiny_mce/tiny_mce.js"></script>
+<script type="text/javascript" src="http://{{ DOMAIN_NAME }}/medias/jscripts/tiny_conf_cv.js"></script>
+<script type="text/javascript" src="/jsi18n/"></script>
+<script type="text/javascript" src="{{ ADMIN_MEDIA }}js/core.js"></script>
+<script type="text/javascript" src="{{ ADMIN_MEDIA }}js/admin/RelatedObjectLookups.js"></script>
+<script type="text/javascript" src="{{ ADMIN_MEDIA }}js/calendar.js"></script>
+<script type="text/javascript" src="{{ MEDIA_URL }}jscripts/DateTimeShortcuts.js"></script>
+{% endblock %}
+
+{% block content %}
+<h2>Ajout d'un projet</h2>
+<form enctype="multipart/form-data" method="post" action=".">
+<table>
+{{ form.as_table }}
+</table>
+<p style="text-align: center;width: 100%">
+  <input type="submit" value="Envoyer" />
+  <input type="button" value="Annuler" onclick="history.go(-1);"/>
+</p>
+</form>
+{% endblock %}

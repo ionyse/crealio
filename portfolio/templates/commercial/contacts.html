@@ -1,0 +1,45 @@
+{% extends "base_portfolio.html" %}
+{% block title %}{{ page.title }} - {{ portfolio_name }} - {{SITE_NAME}}{% endblock %}
+{% block content %}
+
+
+
+<div id="mainFull">
+	<h2>Contactez-moi</h2>
+	
+
+	<div id="contact_message">
+		<p>{{page.content|safe}}</p>
+	</div>
+
+	<div id="contact_form">
+		{% if status %}<p style="color: {% if error %}red{% else %}green{% endif %};">{{status}}</p>{% endif %}
+		<form action="." method="post">
+			<p>
+				<label for="contact_name">Nom : </label>
+				<input class="textfield" size="25" name="pseudo" id="contact_name" type="text"{% if user %}value="{{user.first_name}} {{user.last_name}}"{% endif %} />
+			</p>
+			<p>
+
+				<label for="contact_email">E-Mail: <span class="required">*</span></label>
+				<input class="textfield" size="25" name="mail" id="contact_email" type="text"{% if user %}value="{{user.email}}"{% endif %} />
+			</p>
+			<p>
+				<label for="contact_objet">Objet :</label>
+				<input class="textfield" size="25" name="objet" id="contact_objet" type="text"/>
+			</p>
+
+			<p>
+				<label for="contact_msg">Message : <span class="required">*</span></label>
+				<textarea cols="45" rows="5" name="message" id="contact_msg">{{page.intro}}</textarea>
+			</p>
+			<p>
+				<label>
+					<input class="submit" name="send_email" id="send_email" value="Envoyer l'E-Mail" type="submit" />
+				</label>
+			</p>
+		</form>
+	</div>
+
+</div>
+{% endblock %}

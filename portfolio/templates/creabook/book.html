@@ -1,0 +1,75 @@
+{% extends "base_portfolio.html" %}
+
+{% load thumbnail %}
+
+{% block title %}{{page.title}} - {{ portfolio_name }}  - {{SITE_NAME}}{% endblock %}
+
+{% block jscript %}
+<script type="text/javascript" src="{{MEDIA_URL}}/jscripts/lightbox/prototype.js"></script>
+<script type="text/javascript" src="{{MEDIA_URL}}/jscripts/lightbox/scriptaculous.js?load=effects,builder"></script>
+<script type="text/javascript" src="{{MEDIA_URL}}/jscripts/lightbox/lightbox.js"></script>
+
+<script type="text/javascript">
+function ChangeMessage(message,champ) {
+	if(document.getElementById)
+	document.getElementById(champ).innerHTML = message;
+}        
+</script>
+{% endblock %}
+
+{% block content %}
+<div>
+<h2>Crealio de {{ portfolio_name }}</h2>
+
+<div><p>{% if page.intro %}{{page.intro|safe}}{% endif %}</p></div>
+
+
+{# Liste de mes projets #}
+<div id="portfolioProject">
+	{% for entry in book_entries %}
+	<div class="project">
+		<p>
+			{# Le lien va changer en fonction de plusieurs paramêtres #}
+			
+			<a href="/medias/{{ entry.image }}" 
+			onclick="showPopUpProject(	'project',
+										'{{entry.title|safe}}',
+										'{% if entry.image %}{% thumbnail entry.image 600x600 %}{% else %}{{ MEDIA_URL}}aucune.png{% endif %}',
+										'projet{{entry.id}}',
+										'{{entry.is_long}}',
+										'{{ entry.date|date:"d/m/Y" }}',
+										'{% if entry.url  %}{{ entry.url }}{% endif %}',
+										'{% if entry.file %}{{ MEDIA_URL }}{{ entry.file }}{% endif %}'); 
+					return false">
+			
+			
+
+				{# On affiche les vignettes du projet, S'il n'y en a pas on affiche aucune.png #}
+				{% if entry.image %} 
+				<img src="{% thumbnail entry.image 110x110 %}" alt="{{entry.title}}" title="{{entry.title}}" height="96" />
+				{% else %}
+				<img src="{{ MEDIA_URL}}aucune.png"  alt="{{entry.title}}" height="96" width="96" />
+				{% endif %}
+				
+			</a>
+		</p>
+		{# On charge le texte pour le recupérer dans la popUp. Display none pour ne pas l'afficher..#}
+		<div id="projet{{entry.id}}" style="display: none;">
+			{{ entry.desc|safe }} {# {{entry.is_long}} #}
+		</div>
+	</div>
+	{% endfor %}
+	<div style="clear: both;"></div>
+</div>
+{{page.content|safe}}
+
+
+{# IMPORTANT, FENETRE POP UP INCLUS DANS BASE_PORTFOLIO #}
+
+
+{# Ajout du script de l'aperçu #}
+<script type="text/javascript" src="{{MEDIA_URL}}/jscripts/apercu/popUp.js"></script>
+
+
+</div>
+{% endblock %}

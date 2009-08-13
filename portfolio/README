@@ -1,0 +1,92 @@
+==========
+Créalio.fr
+==========
+
+Installation
+------------
+
+PIL		: http://www.pythonware.com/products/pil/
+sorl-thumbnail	: http://code.google.com/p/sorl-thumbnail/
+django		: http://code.djangoproject.com/
+
+
+Modules
+-------
+
+Ce fichier récapitule la répartition modulaire de l'application et les
+tâches allouées à chacun d'entre eux.
+
+
+Général
+-------
+
+ * ``middleware.py`` : Ce fichier s'occupe de vérifier que c'est bien
+                       le propriétaire du site ou un admin qui se
+                       connecte à l'administration
+
+ * ``decoractor.py`` : Ce fichier s'occupe de tester qu'une view ne
+                       soit valide que sur un site utilisateur ou
+                       commercial.
+
+		       Décorators : ``@commercial_site`` ou
+		                    ``@user_site``
+
+ * ``context_processors.py`` : Ce fichier s'occupe d'ajouter le nom de
+   			       domaine et le nom du site ainsi que le
+   			       menu sur le site commercial comme
+   			       variable commune à tous les templates.
+
+N'oubliez pas de rajouter le middleware et les context_processors à
+votre ``settings.py``
+
+
+Administration
+--------------
+
+   Ce module s'occupe d'hoster les views de l'administration des sites
+   users.
+
+
+Commercial
+----------
+
+   Ce module s'occupe des views concernant le site commercial et du
+   formulaire d'inscription et de contact
+
+
+Creabook
+--------
+
+   Ce module s'occupe d'afficher les réalisations d'un utilisateur
+   dans un portfolio.
+
+CV
+--
+
+   Ce module s'occupe d'afficher le CV d'un utilisateur.
+
+Pages
+-----
+
+   Ce module s'occupe de la gestion de toutes les pages statiques
+   modifiables du site. C'est lui aussi qui est chargé de la
+   génération du menu avec des pages faisant partie de la liste des
+   onglets et d'autres pas.
+
+Statistiques
+------------
+
+J'ai commencé à faire le Middleware, il faudrait vérifier que le
+modèle est suffisant.  
+
+Peut-être serait-il plus judicieux de faire la séparation OS,
+Navigateur ... à l'enregistrement des stats plutôt qu'à leur lecture.
+
+A voir donc.
+
+
+Site commercial
+---------------
+
+Le site commercial est défini non plus par l'id 1 brut dans le code
+mais par l'id de SITE_ID du fichier settings.py

@@ -1,0 +1,6 @@
+.calendarbox .calendarnav-previous,.calendarbox .calendarnav-previous-y, .calendarbox .calendarnav-next, .calendarbox .calendarnav-next-y { display:block; position:absolute; font-weight:bold; font-size:10px; background:#C9DBED url(../img/admin/default-bg.gif) bottom left repeat-x; padding:1px 4px 2px 4px; color:white; }
+.calendarnav-previous:hover, .calendarnav-previous-y:hover, .calendarnav-next:hover, .calendarnav-next-y:hover { background:#036; }
+.calendarnav-previous-y { top:0; left:0; }
+.calendarnav-next-y { top:0; right:0; }
+.calendarnav-previous { top:0; left:25px; }
+.calendarnav-next { top:0; right: 25px; }

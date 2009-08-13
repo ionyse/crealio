@@ -1,0 +1,81 @@
+======================
+Répartition des tâches
+======================
+
+Légende
+=======
+
+  + : Réalisé
+  / : En cours, s'en occupe
+  1.: Numéro de la tâche
+  - : A faire
+
+
+Tâches
+======
+
+Version 1.2 :
+-----------
+
+ / Amaury Condition d'utilisation et Politique de Confidentialité à Rédiger
+ - Amaury Plusieurs images par Projet
+ - Amaury Catégories dans son Créalio
+
+ - Sébastien Page "Fonctionnalités" et "Votre créalio" du site Commercial à refaire.
+ - Sébastien Gestion de plusieurs apparences (Commence par mettre les rouge, bleu, vert sur la même base HTML)
+ - Sébastien Refaire image d'accueil
+
+ - Rémy Permettre la création de page.
+ - Rémy Statistique utilisable et pertinente -> Analytics (Xiti) ?
+ - Rémy Implémentation d'un Captcha
+ - Rémy Export ODT PDF
+
+Version 2.0 :
+-----------
+ - Rémy / Amaury / Sébastien Tout les trucs payant mais ce ne sera visiblement pas pour tout de suite.
+
+
+Maurryson
+---------
+ + : 1.  Réorganisation des Fields et des items du CV.
+ + : 18. Déplacement des fields pour le cv et des items
+ + Amaury Mettre à jour ton CV sous Créalio
+
+
+Séboui
+------
+ + : 1.  Intégration à la page d'administration (liste des pages avec modifier) (Accueil, Contact)
+ + : 2.  Intégration des pages (CV et portfolio)
+ + : 3.  Organisation des onglets en javascript (C'est javascript qui renumérote lors de l'envoi)
+ + : 4.  Modification des informations personnelles du profil.
+ + : Rédige le plan du site
+ + : Mise en page de Notre Annuaire
+ + : Sébastien Revoir l'ergonomie générale
+ + : Sébastien Finir la page d'administration
+ + : Sébastien Publicité -> Politique Publicitaire ... Incruster discret
+ + : Sébastien Rédiger un ensemble d'aide un peu partout sur le site
+ + : Sébastien Revoir l'ergonomie générale
+
+
+Natim
+-----
+ + : 1.  Administration de creabook
+ + : 2.  Affichage du creabook
+ + : 3.  Administration de CV
+ + : 4.  Administration des Pages
+ + : 5.  Modification du mot de passe
+ + : 6.  Visualisation des statistiques
+ + : 7.  Formulaire photo d'identité
+ + : 8.  Erreur 404 si le blog est inexistant.
+ + : 9.  Mettre en français tous les champs de l'inscription
+ + : 17. Formulaire de modification d'email
+ + : Mise en place du champ actif pour pouvoir mettre hors ligne son CV et son portfolio pendant sa rédaction.
+ + Rémy Fixer le Bug de la date sur la page de modification d'un projet
+ + Rémy Facilité la désactivation d'une page CV ou Créalio
+ + Rémy Possibilité de supprimer photo d'identité
+ + Rémy Bug de l'édition de texte pour le créalio : Laisser la possibilité de pas de texte et de changer le titre
+ + Rémy Impression du CV : Avec Âge et Email + Protection du SPAM
+ + Rémy Formulaire suggestion de page admin -> Mail
+ + Rémy Suppression de son compte
+ + Rémy Bug connexion
+ + Votre compte et email dans form de contact si connecté
