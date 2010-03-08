@@ -113,10 +113,10 @@ def admin(request):
     
     for field in fields:
         # On ajoute un field
-        forms.append({'field': field, 'form': FieldForm(instance=field), 'items': []})
+        forms.append({'cv_field': field, 'form': FieldForm(instance=field), 'items': []})
         if request.POST and 'field' in request.POST:
             if field.pk == field_form.instance.pk:
-                forms[i] = {'field': field, 'form': FieldForm(request.POST,instance=field_edit), 'items': []}
+                forms[i] = {'cv_field': field, 'form': FieldForm(request.POST,instance=field_edit), 'items': []}
         
         # On récupère les items
         items = Item.objects.filter(field=field.id).order_by('order')
@@ -134,7 +134,7 @@ def admin(request):
         i += 1
     
     # On ajoute un formulaire de Field vide à la fin
-    forms.append({'field': None, 'form': FieldForm(), 'items': []})
+    forms.append({'cv_field': None, 'form': FieldForm(), 'items': []})
     forms[i]['form'].order = i+1
     
     return render_to_response('cv/admin.html',

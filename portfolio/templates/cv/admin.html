@@ -156,17 +156,17 @@ Sur internet cela correspond à environ 5 rubriques de 5 lignes.
     
     <div class="colonneA">
          
-         {%if form.field %}
-            <div id="field_{{form.field.pk}}" style="display: block" class="cv_field">
-            <input type="button" title="Modifier" name="" value=" " onclick="edit_field({{form.field.pk}},false);" class="button_edit" />            
-            {{ form.field.title }}
+         {%if form.cv_field %}
+            <div id="field_{{form.cv_field.pk}}" style="display: block" class="cv_field">
+            <input type="button" title="Modifier" name="" value=" " onclick="edit_field({{form.cv_field.pk}},false);" class="button_edit" />            
+            {{ form.cv_field.title }}
             </div>
-            <div id="form_{{form.field.pk}}" style="display: None" class="cv_form" >
-            <input type="button" title="Annuler" name="" value=" " onclick="edit_field({{form.field.pk}},true);" class="button_cancel" />
+            <div id="form_{{form.cv_field.pk}}" style="display: None" class="cv_form" >
+            <input type="button" title="Annuler" name="" value=" " onclick="edit_field({{form.cv_field.pk}},true);" class="button_cancel" />
             <form method="POST" action=".">
             {{ form.form }}
-            <input type="hidden" name="field_pk" value="{{form.field.pk}}"/>
-            <input type="hidden" name="order" value="{{form.field.order}}"/>
+            <input type="hidden" name="field_pk" value="{{form.cv_field.pk}}"/>
+            <input type="hidden" name="order" value="{{form.cv_field.order}}"/>
             <input type="submit" title="Supprimer" name="field_suppr" value=" " onclick="return conf_suppr();" class="button_delete" />            
             <input type="submit" title="Valider" name="field" value=" " class="button_valid" />
             </form>
@@ -186,11 +186,11 @@ Sur internet cela correspond à environ 5 rubriques de 5 lignes.
                 
                 </div>
                 <div id="item_form_{{item.item.pk}}" style="Display: None" class="cv_form" class="item"  >
-                <input type="button" title="Annuler" name="" value=" " onclick="edit_field({{form.field.pk}},true);" class="button_cancel" />
+                <input type="button" title="Annuler" name="" value=" " onclick="edit_field({{form.cv_field.pk}},true);" class="button_cancel" />
                 <form method="POST" action=".">
                     {{ item.form }}
                     <input type="hidden" name="order" value="{{item.item.order}}"/>
-                    <input type="hidden" name="field_pk" value="{{form.field.pk}}"/>
+                    <input type="hidden" name="field_pk" value="{{form.cv_field.pk}}"/>
                     <input type="hidden" name="item_pk" value="{{item.item.pk}}"/>
                     <input type="submit" title="Supprimer" name="item_suppr" value=" " onclick="return conf_suppr();" class="button_delete" />
                     <input type="submit" title="Valider" name="item" value=" " class="button_valid" />
@@ -199,16 +199,16 @@ Sur internet cela correspond à environ 5 rubriques de 5 lignes.
 
                 {% else %}
 
-                    <div id="new_field_{{form.field.pk}}" style="Display: block" class="cv_field">
-                        <input type="button" name="" value="Ajouter un item" onclick="edit_new({{form.field.pk}},false);" class="button_new" />
+                    <div id="new_field_{{form.cv_field.pk}}" style="Display: block" class="cv_field">
+                        <input type="button" name="" value="Ajouter un item" onclick="edit_new({{form.cv_field.pk}},false);" class="button_new" />
                     </div>
                     
-                    <div id="new_form_{{form.field.pk}}" style="Display: None" class="cv_form">
-                        <input type="button" title="Annuler" name="" value=" " onclick="edit_new({{form.field.pk}},true);" class="button_cancel" />
+                    <div id="new_form_{{form.cv_field.pk}}" style="Display: None" class="cv_form">
+                        <input type="button" title="Annuler" name="" value=" " onclick="edit_new({{form.cv_field.pk}},true);" class="button_cancel" />
                         <form method="POST" action=".">
                         {{item.form}}
                         <input type="hidden" name="order" value="{{item.form.order}}" />
-                        <input type="hidden" name="field_pk" value="{{form.field.pk}}"/>
+                        <input type="hidden" name="field_pk" value="{{form.cv_field.pk}}"/>
                         <input type="submit" title="Valider" name="item" value=" " class="button_valid" />
                         </form>
                     </div>

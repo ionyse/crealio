@@ -1,11 +1,12 @@
 #!/usr/bin/env python
-from django.core.management import execute_manager
-
 # Sorl dans le path #
 import sys
 import os
 sys.path.append(os.path.join(os.getcwd(),'sorl'))
+sys.path = ['/home/natim/svn/django-1.1.1'] + sys.path
 #######
+
+from django.core.management import execute_manager
 
 try:
     import settings # Assumed to be in the same directory.
