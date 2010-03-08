@@ -81,7 +81,7 @@
 						{% if infos.identite %}
 						<img src="{% thumbnail infos.identite 150x96 %}" alt="{{portfolio_name}}" title="{{portfolio_name}}" id="photo_cv" onclick="showPopUpProject('apercuImg','Photo d\'identité','{% thumbnail infos.identite 900x600 %}','','','',''); return false;" />
 						{% else %}
-						<img src="{{ MEDIA_URL }}/skins/crealio/img/Admin_Photo_User.png" alt="{{portfolio_name}}" title="{{portfolio_name}}" id="photo_cv" onclick="showPopUpProject('apercuImg','Photo d\'identité','{{ MEDIA_URL }}/skins/crealio/img/Admin_Photo_User.png','','',''); return false;" />
+						<!--<img src="{{ MEDIA_URL }}/skins/crealio/img/Admin_Photo_User.png" alt="{{portfolio_name}}" title="{{portfolio_name}}" id="photo_cv" onclick="showPopUpProject('apercuImg','Photo d\'identité','{{ MEDIA_URL }}/skins/crealio/img/Admin_Photo_User.png','','',''); return false;" />-->
 						{% endif %}
 					</a></p>
 					<h2 class="titre_cv">{{portfolio_name}}</h2>
