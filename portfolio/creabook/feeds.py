@@ -5,6 +5,7 @@ from django.utils.feedgenerator import Atom1Feed
 from django.contrib.auth.models import User
 from django.contrib.sites.models import Site
 from django.contrib.sites.models import RequestSite
+from django.http import Http404
 
 class RssFeed(Feed):
     def get_object(self,bits):
@@ -14,7 +15,7 @@ class RssFeed(Feed):
             user.domain = domain
             return user
         except:
-            return None
+            raise Http404
 
     def title(self,obj):
         return "Projets de %s %s" % (obj.first_name.capitalize(), obj.last_name.upper())
