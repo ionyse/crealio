@@ -9,9 +9,12 @@ from django.contrib.sites.models import RequestSite
 class RssFeed(Feed):
     def get_object(self,bits):
         domain = RequestSite(self.request).domain.split(':')[0]
-        user = User.objects.filter(profile__site__domain=domain)[0]
-        user.domain = domain
-        return user
+        try:
+            user = User.objects.get(profile__site__domain=domain)
+            user.domain = domain
+            return user
+        except:
+            return None
 
     def title(self,obj):
         return "Projets de %s %s" % (obj.first_name.capitalize(), obj.last_name.upper())
