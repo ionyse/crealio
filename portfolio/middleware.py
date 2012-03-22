@@ -27,8 +27,8 @@ class StatisticsMiddleware(object):
     # A chaque requête on enregistre les informations statistiques
     def process_request(self, request):
 
-        user_ip         = request.environ['REMOTE_ADDR']
-        user_agent      = request.environ['HTTP_USER_AGENT']
+        user_ip         = request.environ.get('REMOTE_ADDR', '')
+        user_agent      = request.environ.get('HTTP_USER_AGENT', '')
         user_url        = request.path_info
         user_id	        = '0'
 
