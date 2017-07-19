@@ -43,7 +43,7 @@ class Profile(models.Model):
         ('C', 'Célibataire'),
         ('M', 'Marié'),
         ('D', 'Divorcé'),
-        ('P', 'Paxé'),
+        ('P', 'Pacsé'),
         ('A', 'Autre'),
     )
     status = models.CharField('état civil', choices=STATUS,max_length=2, blank=True)

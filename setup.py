@@ -18,6 +18,7 @@ CONTRIBUTORS = read_file('CONTRIBUTORS.rst')
 
 REQUIREMENTS = [
     'Django',
+    'Pillow',
 ]
 
 DEPENDENCY_LINKS = [

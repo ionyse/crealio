@@ -28,6 +28,7 @@ Release
 .. code-block:: bash
 
     pip install crealio
+	python manage.py migrate
 
 
 Development
