@@ -25,7 +25,7 @@ SECRET_KEY = 'h6!a5707$*i)8rsovtm6ijznv!1j!b#lq%1uz&p(c4qn#ig@tj'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'crealio.users',
+    'formtools',
 ]
 
 MIDDLEWARE = [
@@ -126,3 +127,5 @@ STATICFILES_DIRS = [
 ]
 SITE_ID = 1
 SITE_URL = 'localhost'
+SITE_NAME = 'Crealio.fr'
+DOMAIN_NAME = 'localhost'

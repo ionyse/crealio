@@ -1,6 +1,9 @@
-from django.db import models
+import hashlib
+
+from django.conf import settings
 from django.contrib.auth.models import AbstractUser
 from django.contrib.sites.models import Site
+from django.db import models
 
 
 class User(AbstractUser):
@@ -31,3 +34,8 @@ class User(AbstractUser):
     mobile = models.CharField('mobile', max_length=20, blank=True)
     job = models.CharField('job title', max_length=50)
     identite = models.ImageField('picture', upload_to="identite", blank=True)
+
+    def generate_key(self):
+        date = self.date_joined.replace(microsecond=0)
+        seed = ''.join([settings.SECRET_KEY, self.username, str(date)])
+        return hashlib.sha1(seed.encode('utf-8')).hexdigest()

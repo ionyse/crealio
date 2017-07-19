@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta http-equiv="pragma" content="no-cache" />
+
+		<title>{{ title }}</title>
+	</head>
+
+	<body>
+		<h1>{{ title }}</h1>
+		
+		<div style="margin-left:120px;">
+			<p>Bonjour <strong>{{ first_name }}</strong>,</p>
+			
+			<p>Vous venez de vous inscrire sur {{ site }}. C'est une excellente décision, vous ne le regretterez pas.</p>
+			
+			<p>Il ne vous reste plus qu'une chose à faire pour commencer à créer votre portfolio, c'est de valider votre compte.<br />
+			Pour ce faire, il faut vous rendre à cette adresse :<br />
+			<a href="{{ url }}">{{ url }}</a></p>
+			
+			<p>Vous avez 24H pour valider votre compte à partir du moment où vous avez enregistré votre inscription sur le site. Ne traînez donc pas ou il vous faudra recommencer l'opération !</p>
+
+			<p>Pour rappel, voici votre nom d'utilisateur : <b>{{ username }}</b></p>
+
+			<p>A bientôt</p>
+			
+			<p><em>L'équipe de {{site}}</em></p>
+		</div>
+	</body>
+</html>

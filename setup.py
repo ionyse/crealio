@@ -19,6 +19,7 @@ CONTRIBUTORS = read_file('CONTRIBUTORS.rst')
 REQUIREMENTS = [
     'Django',
     'Pillow',
+    'django-formtools',
 ]
 
 DEPENDENCY_LINKS = [
