@@ -4,5 +4,5 @@ from . import views
 
 urlpatterns = [
     # ex: /sign-in/
-    url(r'^sign-in/$', views.index, name='index'),
+    url(r'^sign-in/$', views.sign_in, name='sign-in'),
 ]

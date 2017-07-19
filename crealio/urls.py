@@ -15,9 +15,14 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from django.views.generic.base import RedirectView
+from crealio.users import views
 
 
 urlpatterns = [
+    # Commercial website
+    url(r'^$', RedirectView.as_view(url='/home/'), name='homepage'),
+    url(r'^home/$', views.index),
     url(r'^admin/', admin.site.urls),
     url(r'^users/', include('crealio.users.urls')),
 ]
