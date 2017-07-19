@@ -4,7 +4,7 @@ from django.contrib.sites.models import Site
 
 
 class User(AbstractUser):
-    site = models.ForeignKey(Site)
+    site = models.ForeignKey(Site, default=1)
 
     address1 = models.CharField('address 1', max_length=100, blank=True)
     address2 = models.CharField('address 2', max_length=100, blank=True)
@@ -31,6 +31,3 @@ class User(AbstractUser):
     mobile = models.CharField('mobile', max_length=20, blank=True)
     job = models.CharField('job title', max_length=50)
     identite = models.ImageField('picture', upload_to="identite", blank=True)
-
-    def __str__(self):
-        return str(self.user)

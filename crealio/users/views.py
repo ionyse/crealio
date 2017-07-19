@@ -1,3 +1,7 @@
 from django.shortcuts import render
+from crealio.users.decorators import main_site
 
-# Create your views here.
+
+@main_site
+def index(request):
+    return render(request, 'users/sign-in.html')
