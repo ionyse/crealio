@@ -1,2 +1,4 @@
 *.pyc
 portfolio/settings.py
+.tox/
+*.egg-info/
