@@ -1,2 +1,6 @@
 *.pyc
 portfolio/settings.py
+.tox/
+*.egg-info/
+.venv/
+db.sqlite3

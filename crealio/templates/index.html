@@ -1,0 +1,155 @@
+{% load static %}
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xml:lang="fr" xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+	<title>{% block title %}{{ title|default:"Inscription"}}{% endblock %} - Crealio.fr</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+	<meta name="robots" content="index,follow" />
+	<meta name="revisit-after" content="2 days" />   
+	<link rel="copyright" title="Conditions de réutilisation" href="http://creativecommons.org/licenses/by-nc-sa/2.0/fr/" />
+	<link rel="start" title="Accueil" href="/" />
+
+
+	<link rel="stylesheet" media="screen" type="text/css" href="{% static 'skins/crealio/styles.css' %}" />
+	<link rel="stylesheet" media="screen" type="text/css" href="{% static 'skins/crealio/contents.css' %}" />
+	<link rel="stylesheet" media="print"  type="text/css" href="{% static 'skins/crealio/printer.css' %}" />
+
+	{% block css %}
+	{% endblock %}
+	{% block jscript %}
+	{% endblock %}
+</head>
+
+
+<body>
+	<!-- wrap starts here -->
+
+	<div id="header">	
+
+		<div id="header_body">
+			<div id="box">
+				<p><a href="/connexion/"><span class="orange">Déjà inscrit ? Connectez-vous !</span></a> | <a href="/presentation/">Aide</a> | <a href="/contact">Contact</a><p>
+					
+					<form action="{{COMMERCIAL_URL}}/rechercher/" id="cse-search-box">
+					  <div>
+					    <input type="hidden" name="cx" value="partner-pub-0150814735647856:tx0i7qslrio" />
+					    <input type="hidden" name="cof" value="FORID:9" />
+					    <input type="hidden" name="ie" value="ISO-8859-1" />
+					    <input type="text" name="q" size="35" />
+					    <input type="submit" name="sa" value="Rechercher" />
+					  </div>
+					</form>
+					<script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=cse-search-box&amp;lang=fr"></script>
+				</div>
+				<h1 id="logo">Créa<span class="orange">lio</span></h1>
+				<h2 id="slogan">Faites vous un nom sur Internet.</h2>
+
+
+			</div>
+		</div>		
+
+		<div id="menu">
+			<div id="menu_body">
+				<ul>
+					<li {% ifequal section "accueil" %}  id="current"{% endifequal %}><a href="/" title="Accueil">Accueil</a></li>
+					<li {% ifequal section "presentation" %}  id="current"{% endifequal %}><a href="/presentation/" title="Présentation">Comment ça fonctionne ?</a></li>
+					<li {% ifequal section "rechercher" %}  id="current"{% endifequal %}><a href="/annuaire/" title="Annuaire">Annuaire</a></li>
+					<li {% ifequal section "partenaires" %}  id="current"{% endifequal %}><a href="/partenaires/" title="Nos Partenaires">Nos partenaires</a></li>
+
+				</ul>
+			</div>
+			<div style="clear: both"></div>
+		</div>
+		<div id="wrap"> 
+
+			<!-- content-wrap starts here -->	
+			<div id="content-wrap">  
+
+				{% block content %}
+
+				<!-- CONTENT -->
+
+				{% endblock %}		
+
+				<!-- content-wrap ends here -->	
+			</div>
+
+			<!-- wrap ends here -->
+		</div>		
+
+		<!-- footer starts here -->		
+		<div id="footer">
+			<div id="footer_body">
+				<div id="footer_1">
+					<p>&copy; <strong><a href="{{ COMMERCIAL_URL }}">Crealio.fr</a></strong> - <a href="http://creativecommons.org/licenses/by/3.0/deed.fr">Creative Commons</a><br/><span class="antiLink"><a href="" onclick="showPopUpProject(
+						'conditions',
+						'Conditions d\'utilisation',
+						'',
+						'condBox',
+						'',
+						'',
+						'',
+						''); 
+						return false;">Conditions d'utilisation</a> | 
+						<a href="" onclick="showPopUpProject(
+						'confidentialité',
+						'Politique de confidentialité',
+						'',
+						'confBox',
+						'',
+						'',
+						'',
+						''); 
+						return false;">Politique de confidentialité</a></span>
+					</p>
+				</div>
+				<div id="footer_2">
+
+				</div>
+				<div id="footer_3">
+					<p>
+						<a href="/accueil/">Accueil</a> | <a href="/plan/">Plan du site</a> | <a href="/contact/">Contact</a><br/>
+						<span class="antiLink">Design par	: <a href="http://www.styleshout.com/">styleshout</a></span>
+					</p>
+
+				</div>
+			</div>
+
+			<!-- Conditions d'utilisation -->	
+
+
+		</div>
+
+		<div id="condBox">
+			{{ cond.content }}
+		</div>
+		<div id="confBox">
+			{{ conf.content }}
+		</div>
+		<!-- IMPORTANT, FENETRE POP UP APERCU A CONSERVER ! -->
+		<!-- Ajout du script de l'aperçu -->
+		<script type="text/javascript" src="{% static 'jscripts/apercu/popUp.js' %}"></script>
+
+
+		<div id="popUpProjet" class="">
+			<div class="boutonClosePopUp"><a href="" onclick='closePopUpProject(); return false;'></a></div>
+
+			<div id="contenuTitrePopUp"></div>
+			<div id="contenuCorpPopUp"></div>
+		</div>
+
+		<script type="text/javascript">
+		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+		<script type="text/javascript">
+		try {
+			var pageTracker = _gat._getTracker("UA-6590959-1");
+			pageTracker._trackPageview();
+			} catch(err) {}</script>
+
+
+			<!-- footer ends here -->
+	</body>
+</html>

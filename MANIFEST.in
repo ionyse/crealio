@@ -1,0 +1,2 @@
+include *.rst LICENSE Makefile tox.ini .coveragerc app.wsgi
+include dev-requirements.txt

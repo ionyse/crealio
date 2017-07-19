@@ -1,9 +1,0 @@
-{% extends "index.html" %}
-
-{% block title %}{{page.title}} - {{ portfolio_name }}  - {{SITE_NAME}}{% endblock %}
-
-{% block content %}
-<h2>{{page.title}}</h2>
-{% if page.intro %}{{page.intro|safe}}{% endif %}
-{% if page.content %}{{page.content|safe}}{% endif %}
-{% endblock %}

@@ -1,0 +1,59 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div id="mainFull">
+    <div id="listeFonctionnalite">
+	    <div class="fonctionnalite">
+		    <img src="{% static 'skins/crealio/img/Admin_Photo_User.png' %}" alt="Donnees" class="left"/>
+		    <p><span class="titre">Créé votre Créalio en 5 minutes.	</span><br/>
+			    L'inscription à Créalio est <strong>gratuite</strong> et se fait <strong>très rapidement</strong>.</p>
+	    </div>
+	    
+	    <div class="fonctionnalite">
+		    <img src="{% static 'skins/crealio/img/Admin_CV_Contenu.png' %}" alt="Donnees" class="right"/>
+		    <p><span class="titre">Construisez simplement et rapidement votre CV.</span><br/>
+			    Notre <strong>outil de création de CV</strong> vous permet via un formulaire dynamique, de <strong>compléter</strong> et <strong>organiser</strong> votre contenu.<br/>En quelques cliques, obtenez alors<strong> une version papier</strong> que vous pourrez directement envoyer aux entreprises.</p>
+	    </div>
+	    
+	    <div class="fonctionnalite">
+		    <img src="{% static 'skins/crealio/img/Admin_Msg_Contact.png' %}" alt="Donnees" class="left"/>
+		    <p><span class="titre">Présentez vos créations.</span><br/>
+			    Créez <strong>un portfolio </strong>en ligne de vos créations ! Images et descriptions permettent de se faire une idée de <strong>votre expérience</strong>.</p>
+	    </div>
+
+	    <div class="fonctionnalite">
+		    <img src="{% static 'skins/crealio/img/Admin_Settings.png' %}" alt="Donnees" class="right"/>
+		    <p><span class="titre">Gérez votre CV directement en Ligne.</span><br/>
+			    Toutes les modifications se font <strong>en ligne</strong>. <strong>Rien n'est à installer</strong> et <strong>tout est accessible</strong> que vous soyez chez vous ou en déplacement.</p>
+	    </div>
+
+	    <div class="fonctionnalite">
+		    <img src="{% static 'skins/crealio/img/Admin_Stats.png' %}" alt="Donnees" class="left"/>
+		    <p><span class="titre">Statistiques de votre site.</span><br/>
+			    <strong>Un module d'analyse</strong> vous permet de connaître les statistiques de visite sur votre créalio et <strong>ce en temps réel</strong>.</p>
+	    </div>
+    </div>
+
+    <div id="barInscription">
+	    <h3>Votre Créalio en 3 étapes</h3>
+	    <ol>
+		    <li>Ouvrir un Compte</li>
+		    <li>Valider votre adresse Mail</li>
+		    <li>Complétez votre CV</li>
+	    </ol>
+	    <p>C'est bon, votre CV est en ligne. Vous êtes dès à présent référencé sur le net.</p>
+	    <div class="boutonCreer"><a href="{% url 'sign-in' %}"><img src="{% static 'skins/crealio/img/flecheInscription.png' %}" alt=""/><p>Créez votre Créalio</p><div style="clear: both;"></a></div></div>
+    </div>
+
+
+    <div style="clear: both;"></div>
+	<div>
+        <h3>Le concept</h3>
+	    <p>Notre objectif n'est pas de proposer une base de donnée de CV ayant pour but de faciliter la recherche d'emploi mais d'avantage de proposer <strong>un complément au CV traditionnel</strong>, un support de présentation numérique accessible par tous.</p>
+	    <p>Nous voulions qu'en cherchant notre nom sous Google, l'utilisateur trouve un lien pertinent permettant de nous présenter de la façon dont nous le voulions, et non pas grâce aux divers sites que nous fréquentons.</p>
+    </div>
+</div>
+{% endblock %}

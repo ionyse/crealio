@@ -1,0 +1,16 @@
+{% extends "index.html" %}
+{% block title %}Inscription{% endblock %}
+{% block content %}
+<h2>Inscription</h2>
+<fieldset>
+    <legend>Etape {{ wizard.steps.step1 }} / {{ wizard.steps.count }}</legend>
+    <form method="post">
+        <table>
+            {% csrf_token %}
+            {{ wizard.management_form }}
+            {{ wizard.form }}
+         	<th colspan="2" style="text-align: right"><input type="submit" value="Suivant ->" /></th>
+        </table>
+    </form>
+</fieldset>
+{% endblock %}
