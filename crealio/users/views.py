@@ -4,7 +4,7 @@ from crealio.users.decorators import main_site
 
 @main_site
 def index(request):
-    return render(request, 'users/home.html')
+    return render(request, 'users/home.html', {'section': 'presentation'})
 
 
 @main_site
